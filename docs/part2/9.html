@@ -514,7 +514,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+
   &lt;title&gt;{% block title %}base{% endblock %}&lt;/title&gt;
+
   &lt;!-- Tell the browser to be responsive to screen width --&gt;
   &lt;meta content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot; name=&quot;viewport&quot;&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &apos;adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css&apos; %}&quot;&gt;
@@ -529,7 +531,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect. --&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &apos;adminlet-2.4.10/dist/css/skins/skin-blue.min.css&apos; %}&quot;&gt;
 
-    {% block css %}{% endblock %}
+  {% block css %}{% endblock %}
 
 &lt;/head&gt;
 &lt;!--
@@ -575,6 +577,7 @@ desired effect
       &lt;!-- Navbar Right Menu --&gt;
       &lt;div class=&quot;navbar-custom-menu&quot;&gt;
         &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+
           &lt;!-- Messages: style can be found in dropdown.less--&gt;
           &lt;li class=&quot;dropdown messages-menu&quot;&gt;
             &lt;!-- Menu toggle button --&gt;
@@ -634,6 +637,7 @@ desired effect
               &lt;li class=&quot;footer&quot;&gt;&lt;a href=&quot;#&quot;&gt;View all&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
+
           &lt;!-- Tasks Menu --&gt;
           &lt;li class=&quot;dropdown tasks-menu&quot;&gt;
             &lt;!-- Menu Toggle Button --&gt;
@@ -671,8 +675,10 @@ desired effect
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
+
           &lt;!-- User Account Menu --&gt;
           &lt;li class=&quot;dropdown user user-menu&quot;&gt;
+
             &lt;!-- Menu Toggle Button --&gt;
             &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
               &lt;!-- The user image in the navbar--&gt;
@@ -687,7 +693,7 @@ desired effect
 
                 &lt;p&gt;
                   &#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;
-                  &lt;small&gt;2019-4-12&lt;/small&gt;
+                  &lt;small&gt;2019-4-16&lt;/small&gt;
                 &lt;/p&gt;
               &lt;/li&gt;
               &lt;!-- Menu Body --&gt;
@@ -716,6 +722,7 @@ desired effect
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
+          &lt;!-- Control Sidebar Toggle Button --&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
     &lt;/nav&gt;
@@ -755,6 +762,7 @@ desired effect
       &lt;ul class=&quot;sidebar-menu&quot; data-widget=&quot;tree&quot;&gt;
         &lt;li class=&quot;header&quot;&gt;&#x5BFC;&#x822A;&#x680F;&lt;/li&gt;
         &lt;!-- Optionally, you can add icons to the links --&gt;
+
         &lt;li&gt;&lt;a href=&quot;{% url &apos;assets:dashboard&apos; %}&quot;&gt;&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt; &lt;span&gt;&#x4EEA;&#x8868;&#x76D8;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;{% url &apos;assets:index&apos; %}&quot;&gt;&lt;i class=&quot;fa fa-table&quot;&gt;&lt;/i&gt; &lt;span&gt;&#x8D44;&#x4EA7;&#x603B;&#x8868;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
@@ -770,25 +778,23 @@ desired effect
 
     &lt;!-- Main content --&gt;
     &lt;section class=&quot;content container-fluid&quot;&gt;
-        {#        &#x4E3B;&#x4F53;&#x5185;&#x5BB9;&#x5168;&#x653E;&#x5230;&#x8FD9;&#x91CC;&#xFF01;#}
-        {% block content %}{% endblock %}
+
+      {% block content %}{% endblock %}
+
     &lt;/section&gt;
     &lt;!-- /.content --&gt;
-
   &lt;/div&gt;
   &lt;!-- /.content-wrapper --&gt;
-
 
   &lt;!-- Main Footer --&gt;
   &lt;footer class=&quot;main-footer&quot;&gt;
     &lt;!-- To the right --&gt;
     &lt;div class=&quot;pull-right hidden-xs&quot;&gt;
-      http://www.liujiangblog.com
+      http://localhost:8000/assets/dashboard/#
     &lt;/div&gt;
     &lt;!-- Default to the left --&gt;
-    &lt;strong&gt;Copyright &amp;copy; 2019 &lt;a href=&quot;http://www.liujiangblog.com&quot; target=&quot;_blank&quot;&gt;&#x5218;&#x6C5F;&#x7684;Django&#x6559;&#x7A0B;&lt;/a&gt;.&lt;/strong&gt; All rights reserved.
+    &lt;strong&gt;Copyright &amp;copy; 2020 &lt;a href=&quot;http://localhost:8000/assets/dashboard/#&quot; target=&quot;_blank&quot;&gt;CMDB&#x9879;&#x76EE;&#x6D4B;&#x8BD5;&lt;/a&gt;.&lt;/strong&gt; All rights reserved.
   &lt;/footer&gt;
-
 
 &lt;/div&gt;
 &lt;!-- ./wrapper --&gt;
@@ -802,16 +808,19 @@ desired effect
 &lt;!-- AdminLTE App --&gt;
 &lt;script src=&quot;{% static &apos;adminlet-2.4.10/dist/js/adminlte.min.js&apos; %}&quot;&gt;&lt;/script&gt;
 
-{% block script %}{% endblock %}
-
 &lt;script&gt;
-    $(&apos;ul.sidebar-menu li&apos;).each(function(i){
+    $(&apos;ul.sidebar-menu li&apos;).each(function (i) {
         if($(this).children().first().attr(&apos;href&apos;)===&apos;{{ request.path }}&apos;){
             $(this).addClass(&apos;active&apos;);
         }else{
         }
-    });
+    })
 &lt;/script&gt;
+
+
+{% block script %}{% endblock %}
+
+
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p>&#x5176;&#x4E2D;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x7684;&#x5E95;&#x90E8;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;&#x4FA7;&#x8FB9;&#x680F;&#x6839;&#x636E;&#x5F53;&#x524D;url&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x7684;&#x6FC0;&#x6D3B;active&#x72B6;&#x6001;&#xFF0C;&#x7F16;&#x5199;&#x4E86;&#x4E00;&#x6BB5;&#x7B80;&#x5355;&#x7684;js&#x4EE3;&#x7801;&#xFF1A;</p>
@@ -1017,7 +1026,7 @@ def detail(request, asset_id):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"typora-copy-images-to":"images","title":"9.前端框架AdminLTE","level":"1.4.9","depth":2,"next":{"title":"10.资产总表","level":"1.4.10","depth":2,"path":"part2/10.md","ref":"part2/10.md","articles":[]},"previous":{"title":"8.已上线资产更新","level":"1.4.8","depth":2,"path":"part2/8.md","ref":"part2/8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/9.md","mtime":"2020-08-13T07:21:34.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-13T09:46:29.532Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"typora-copy-images-to":"images","title":"9.前端框架AdminLTE","level":"1.4.9","depth":2,"next":{"title":"10.资产总表","level":"1.4.10","depth":2,"path":"part2/10.md","ref":"part2/10.md","articles":[]},"previous":{"title":"8.已上线资产更新","level":"1.4.8","depth":2,"path":"part2/8.md","ref":"part2/8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/9.md","mtime":"2020-08-14T00:43:41.243Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-14T00:47:35.448Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
